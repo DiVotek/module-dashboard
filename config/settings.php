@@ -3,7 +3,7 @@
 return [
     'dashboard' => [
         'is_modal' => true,
-        'design' => 'product_design',
-        'template' => 'product_template',
+        'design' => 'dashboard_design',
+        'template' => 'dashboard_template',
     ],
 ];
