@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        StaticPage::createSystemPage('Dashboard', 'dashboard');
-        StaticPage::createSystemPage('Login', 'login');
-        StaticPage::createSystemPage('Register', 'register');
-        StaticPage::createSystemPage('Reset password', 'reset_password');
+        StaticPage::createSystemPage('Dashboard', 'dashboard', 'dashboard', 'dashboard::dashboard-component');
+        StaticPage::createSystemPage('Login', 'login', 'login', 'dashboard::login-component');
+        StaticPage::createSystemPage('Register', 'register', 'register', 'dashboard::register-component');
+        StaticPage::createSystemPage('Reset password', 'reset-password', 'reset-password', 'dashboard::reset-password-component');
     }
 
     /**

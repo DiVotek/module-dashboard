@@ -3,6 +3,7 @@
 namespace Modules\Dashboard\Livewire;
 
 use App\Actions\GetCart;
+use App\Models\SystemPage;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -13,7 +14,12 @@ class LoginComponent extends Component
 
     public function render()
     {
-        return view('dashboard::livewire.login-component');
+        $page = SystemPage::query()->where('page_id', $this->page->id)->first();
+        $design = 'page.default';
+        if ($page && $page->design) {
+            $design = $page->setting_key . '.' . $page->design;
+        }
+        return view('template::' . $design);
     }
 
     public function submit()
